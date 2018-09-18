@@ -43,4 +43,21 @@ Pod::Spec.new do |s|
       dateCategory.public_header_files = 'XKCategory/Classes/XKCategory/NSDate+xkCategory/*.h'
   end
   
+  s.subspec 'NSString+xkCategory' do |stringCategory|
+      stringCategory.source_files = 'XKCategory/Classes/XKCategory/NSString+xkCategory/*.{h,m}'
+      stringCategory.public_header_files = 'XKCategory/Classes/XKCategory/NSString+xkCategory/*.h'
+      
+      #s.subspec 'MD5SHA1' do |mD5SHA1|
+          # mD5SHA1.source_files = 'XKCategory/Classes/XKCategory/NSString+xkCategory/MD5SHA1/*.{h,m}'
+          #mD5SHA1.public_header_files = 'XKCategory/Classes/XKCategory/NSString+xkCategory/MD5SHA1/*.h'
+          
+          #s.subspec 'GTMBase64' do |gTMBase64|
+          # gTMBase64.source_files = 'XKCategory/Classes/XKCategory/NSString+xkCategory/MD5SHA1/GTMBase64/*.{h,m}'
+          # gTMBase64.public_header_files = 'XKCategory/Classes/XKCategory/NSString+xkCategory/MD5SHA1/GTMBase64/*.h'
+              
+              #end
+              # end
+      
+  end
+  
 end

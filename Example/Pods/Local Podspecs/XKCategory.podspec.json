@@ -23,6 +23,21 @@
       "name": "NSDate+xkCategory",
       "source_files": "XKCategory/Classes/XKCategory/NSDate+xkCategory/*.{h,m}",
       "public_header_files": "XKCategory/Classes/XKCategory/NSDate+xkCategory/*.h"
+    },
+    {
+      "name": "GTMBase64",
+      "source_files": "XKCategory/Classes/XKCategory/NSString+xkCategory/MD5SHA1/GTMBase64/*.{h,m}",
+      "public_header_files": "XKCategory/Classes/XKCategory/NSString+xkCategory/MD5SHA1/GTMBase64/*.h"
+    },
+    {
+      "name": "MD5SHA1",
+      "source_files": "XKCategory/Classes/XKCategory/NSString+xkCategory/MD5SHA1/*.{h,m}",
+      "public_header_files": "XKCategory/Classes/XKCategory/NSString+xkCategory/MD5SHA1/*.h"
+    },
+    {
+      "name": "NSString+xkCategory",
+      "source_files": "XKCategory/Classes/XKCategory/NSString+xkCategory/*.{h,m}",
+      "public_header_files": "XKCategory/Classes/XKCategory/NSString+xkCategory/*.h"
     }
   ]
 }
