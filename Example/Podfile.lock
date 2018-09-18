@@ -1,0 +1,18 @@
+PODS:
+  - XKCategory (1.0.0):
+    - "XKCategory/NSDate+xkCategory (= 1.0.0)"
+  - "XKCategory/NSDate+xkCategory (1.0.0)"
+
+DEPENDENCIES:
+  - XKCategory (from `../`)
+
+EXTERNAL SOURCES:
+  XKCategory:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  XKCategory: 3be63f0b8721240370bcdb3af99161910dea313f
+
+PODFILE CHECKSUM: 42217721f2156952524d7b3064d51536efe988a2
+
+COCOAPODS: 1.5.3

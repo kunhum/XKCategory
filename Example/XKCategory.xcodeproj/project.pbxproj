@@ -60,13 +60,13 @@
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7462F73C5501AAE3BF632F8E /* Pods-XKCategory_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XKCategory_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XKCategory_Example/Pods-XKCategory_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		754548193AFC4DBDDAE3D619 /* Pods_XKCategory_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XKCategory_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		79C1BD6BD6DBBBA5ACF6292E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		79C1BD6BD6DBBBA5ACF6292E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8CB33B4935ADEA58E485879F /* Pods-XKCategory_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XKCategory_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-XKCategory_Tests/Pods-XKCategory_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		90C48A36B0B2CC65883BA166 /* Pods_XKCategory_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XKCategory_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A77A7B66BBD31B98848D6709 /* XKCategory.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = XKCategory.podspec; path = ../XKCategory.podspec; sourceTree = "<group>"; };
+		A77A7B66BBD31B98848D6709 /* XKCategory.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = XKCategory.podspec; path = ../XKCategory.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		E277DA6193DA8EC47B2A0FB4 /* Pods-XKCategory_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XKCategory_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-XKCategory_Example/Pods-XKCategory_Example.release.xcconfig"; sourceTree = "<group>"; };
-		F5A1F04701BF6BD291257C89 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		F5A1F04701BF6BD291257C89 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,15 +299,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-XKCategory_Example-checkManifestLockResult.txt",
 			);
@@ -321,15 +317,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-XKCategory_Tests-checkManifestLockResult.txt",
 			);
@@ -343,15 +335,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-XKCategory_Example/Pods-XKCategory_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/XKCategory/XKCategory.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XKCategory.framework",
 			);

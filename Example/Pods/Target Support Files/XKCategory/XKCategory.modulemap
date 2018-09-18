@@ -1,0 +1,6 @@
+framework module XKCategory {
+  umbrella header "XKCategory-umbrella.h"
+
+  export *
+  module * { export * }
+}

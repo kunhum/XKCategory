@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'XKCategory'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of XKCategory.'
+  s.version          = '1.0.0'
+  s.summary          = '日常用到的分类'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -17,20 +17,18 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+  s.description      = '日常开发经常用到的分类'
 
   s.homepage         = 'https://github.com/kunhum/XKCategory'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'kunhum' => '842222367@qq.com' }
+  s.author           = { 'kunhum' => 'kunhum@163.com' }
   s.source           = { :git => 'https://github.com/kunhum/XKCategory.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'XKCategory/Classes/**/*'
+#s.source_files = 'XKCategory/Classes/XKCategory/*.{h,m}'
   
   # s.resource_bundles = {
   #   'XKCategory' => ['XKCategory/Assets/*.png']
@@ -39,4 +37,10 @@ TODO: Add long description of the pod here.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
+  
+  s.subspec 'NSDate+xkCategory' do |dateCategory|
+      dateCategory.source_files = 'XKCategory/Classes/XKCategory/NSDate+xkCategory/*.{h,m}'
+      dateCategory.public_header_files = 'XKCategory/Classes/XKCategory/NSDate+xkCategory/*.h'
+  end
+  
 end
