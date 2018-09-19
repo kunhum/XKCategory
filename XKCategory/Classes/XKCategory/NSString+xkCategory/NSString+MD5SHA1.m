@@ -8,78 +8,61 @@
 
 #import "NSString+MD5SHA1.h"
 #import <CommonCrypto/CommonDigest.h>
-#import "GTMBase64.h"
 
 @implementation NSString (MD5SHA1)
 
-- (NSString *)MD5 {
+#pragma mark MD5加密
+- (NSString *)xk_MD5 {
     
     const char *cStr = [self UTF8String];
     unsigned char digest[CC_MD5_DIGEST_LENGTH];
     CC_MD5(cStr, (CC_LONG)strlen(cStr), digest );
-    
     NSMutableString *output = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
-    
     for(int i = 0; i < CC_MD5_DIGEST_LENGTH; i++)
         [output appendFormat:@"%02x", digest[i]];
-    
     return output;
-    
 }
-
-- (NSString *)MD5base64 {
+#pragma mark MD5加密，然后Base64编码
+- (NSString *)xk_MD5base64 {
     
     const char *cStr = [self UTF8String];
     unsigned char digest[CC_MD5_DIGEST_LENGTH];
     CC_MD5( cStr, (CC_LONG)strlen(cStr), digest );
-    
-    NSData * base64 = [[NSData alloc]initWithBytes:digest length:CC_MD5_DIGEST_LENGTH];
-    base64 = [GTMBase64 encodeData:base64];
-    
-    NSString * output = [[NSString alloc] initWithData:base64 encoding:NSUTF8StringEncoding];
+    NSData *base64 = [[NSData alloc] initWithBytes:digest length:CC_MD5_DIGEST_LENGTH];
+    base64 = [base64 base64EncodedDataWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    NSString *output = [[NSString alloc] initWithData:base64 encoding:NSUTF8StringEncoding];
     return output;
     
 }
-
-- (NSString *)SHA1 {
+#pragma mark SHA1加密
+- (NSString *)xk_SHA1 {
     
     const char *cstr = [self cStringUsingEncoding:NSUTF8StringEncoding];
     NSData *data = [NSData dataWithBytes:cstr length:self.length];
-    
     uint8_t digest[CC_SHA1_DIGEST_LENGTH];
-    
     CC_SHA1(data.bytes, (CC_LONG)data.length, digest);
-    
-    NSMutableString* output = [NSMutableString stringWithCapacity:CC_SHA1_DIGEST_LENGTH * 2];
-    
+    NSMutableString *output = [NSMutableString stringWithCapacity:CC_SHA1_DIGEST_LENGTH * 2];
     for(int i = 0; i < CC_SHA1_DIGEST_LENGTH; i++)
         [output appendFormat:@"%02x", digest[i]];
-    
     return output;
 }
-
-- (NSString *)SHA1base64 {
+#pragma mark SHA1加密，然后Base64编码
+- (NSString *)xk_SHA1base64 {
     
     const char *cstr = [self cStringUsingEncoding:NSUTF8StringEncoding];
     NSData *data = [NSData dataWithBytes:cstr length:self.length];
-    
     uint8_t digest[CC_SHA1_DIGEST_LENGTH];
-    
     CC_SHA1(data.bytes, (CC_LONG)data.length, digest);
-    
-    NSData * base64 = [[NSData alloc]initWithBytes:digest length:CC_SHA1_DIGEST_LENGTH];
-    base64 = [GTMBase64 encodeData:base64];
-    
-    NSString * output = [[NSString alloc] initWithData:base64 encoding:NSUTF8StringEncoding];
+    NSData *base64   = [[NSData alloc]initWithBytes:digest length:CC_SHA1_DIGEST_LENGTH];
+    NSString *output = [base64 base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
     return output;
     
 }
-
-- (NSString *)base64 {
+#pragma mark 使用Base64编码
+- (NSString *)xk_base64{
     
-    NSData * data = [self dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    data = [GTMBase64 encodeData:data];
-    NSString * output = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSData *data     = [self dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    NSString *output = [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
     return output;
     
 }

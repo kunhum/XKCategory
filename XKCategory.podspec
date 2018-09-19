@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'XKCategory'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = '日常用到的分类'
 
 # This description is used to generate tags and improve search results.
@@ -46,18 +46,41 @@ Pod::Spec.new do |s|
   s.subspec 'NSString+xkCategory' do |stringCategory|
       stringCategory.source_files = 'XKCategory/Classes/XKCategory/NSString+xkCategory/*.{h,m}'
       stringCategory.public_header_files = 'XKCategory/Classes/XKCategory/NSString+xkCategory/*.h'
-      
-      #s.subspec 'MD5SHA1' do |mD5SHA1|
-          # mD5SHA1.source_files = 'XKCategory/Classes/XKCategory/NSString+xkCategory/MD5SHA1/*.{h,m}'
-          #mD5SHA1.public_header_files = 'XKCategory/Classes/XKCategory/NSString+xkCategory/MD5SHA1/*.h'
-          
-          #s.subspec 'GTMBase64' do |gTMBase64|
-          # gTMBase64.source_files = 'XKCategory/Classes/XKCategory/NSString+xkCategory/MD5SHA1/GTMBase64/*.{h,m}'
-          # gTMBase64.public_header_files = 'XKCategory/Classes/XKCategory/NSString+xkCategory/MD5SHA1/GTMBase64/*.h'
-              
-              #end
-              # end
-      
   end
+  s.subspec 'UIImage+xkCategory' do |imageCategory|
+      imageCategory.source_files = 'XKCategory/Classes/XKCategory/UIImage+xkCategory/*.{h,m}'
+      imageCategory.public_header_files = 'XKCategory/Classes/XKCategory/UIImage+xkCategory/*.h'
+  end
+  s.subspec 'UILabel+xkCategory' do |labelCategory|
+      labelCategory.source_files = 'XKCategory/Classes/XKCategory/UILabel+xkCategory/*.{h,m}'
+      labelCategory.public_header_files = 'XKCategory/Classes/XKCategory/UILabel+xkCategory/*.h'
+  end
+  s.subspec 'UIView+xkCategory' do |viewCategory|
+      viewCategory.source_files = 'XKCategory/Classes/XKCategory/UIView+xkCategory/*.{h,m}'
+      viewCategory.public_header_files = 'XKCategory/Classes/XKCategory/UIView+xkCategory/*.h'
+  end
+  s.subspec 'UITextFieldView+xkCategory' do |textfieldViewCategory|
+      textfieldViewCategory.source_files = 'XKCategory/Classes/XKCategory/UITextFieldView+xkCategory/*.{h,m}'
+      textfieldViewCategory.public_header_files = 'XKCategory/Classes/XKCategory/UITextFieldView+xkCategory/*.h'
+      textfieldViewCategory.dependency 'XKInsertLimit'
+  end
+  s.subspec 'UIScrollView+xkCategory' do |scrollViewCategory|
+      scrollViewCategory.source_files = 'XKCategory/Classes/XKCategory/UIScrollView+xkCategory/*.{h,m}'
+      scrollViewCategory.public_header_files = 'XKCategory/Classes/XKCategory/UIScrollView+xkCategory/*.h'
+      scrollViewCategory.dependency 'MJRefresh'
+  end
+  s.subspec 'UIButton+xkCategory' do |buttonCategory|
+      buttonCategory.source_files = 'XKCategory/Classes/XKCategory/UIButton+xkCategory/*.{h,m}'
+      buttonCategory.public_header_files = 'XKCategory/Classes/XKCategory/UIButton+xkCategory/*.h'
+  end
+  s.subspec 'UINavigationController+xkCategory' do |navigationControllerCategory|
+      navigationControllerCategory.source_files = 'XKCategory/Classes/XKCategory/UINavigationController+xkCategory/*.{h,m}'
+      navigationControllerCategory.public_header_files = 'XKCategory/Classes/XKCategory/UINavigationController+xkCategory/*.h'
+  end
+  s.subspec 'UIColorHex' do |colorCategory|
+      colorCategory.source_files = 'XKCategory/Classes/XKCategory/UIColorHex/*.{h,m}'
+      colorCategory.public_header_files = 'XKCategory/Classes/XKCategory/UIColorHex/*.h'
+  end
+  
   
 end

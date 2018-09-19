@@ -17,7 +17,7 @@
 #define isNullObject(object) ([object isKindOfClass:[NSNull class]])
 #define XK_SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 
-static NSCharacterSet* VariationSelectors = nil;
+static NSCharacterSet *VariationSelectors = nil;
 
 @implementation NSString (xkCategory)
 
@@ -95,28 +95,6 @@ static NSCharacterSet* VariationSelectors = nil;
     result = [first substringWithRange:NSMakeRange(0, 1)];
     
     return result.uppercaseString;
-}
-
-#pragma mark - MD5加密
-
-- (NSString *)xk_MD5String {
-    
-    const char *cStr = [self UTF8String];
-//    CC_MD5_DIGEST_LENGTH
-    NSInteger length = CC_MD5_DIGEST_LENGTH;
-    unsigned char result[length];
-    
-    CC_MD5(cStr, (unsigned int)strlen(cStr), result);
-    
-    NSMutableString *ret = [NSMutableString stringWithCapacity:length];
-    
-    for(int i = 0; i < length; i++) {
-        [ret appendFormat:@"%02X",result[i]];
-//        NSLog(@"%@",[NSString stringWithFormat:@"%02X",result[i]]);
-    }
-    
-    return [ret lowercaseString];
-    
 }
 
 - (BOOL)xk_isEmoji {

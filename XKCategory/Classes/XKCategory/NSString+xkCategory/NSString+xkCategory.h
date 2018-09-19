@@ -18,9 +18,6 @@
 ///汉字转换为拼音后，返回大写的首字母
 - (NSString *)xk_uppercasePinYinFirstLetter;
 
-///MD5加密字符串
-- (NSString *)xk_MD5String;
-
 ///URL编码
 - (NSString *)xk_urlEncodedString;
 
