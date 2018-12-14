@@ -69,7 +69,8 @@
         return;
     }
     CGFloat fontSize = font.pointSize;
-    UIFont *xkFont   = [UIFont fontWithName:font.familyName size:fontSize*XK_RATIO];
+//    UIFont *xkFont   = [UIFont fontWithName:font.familyName size:fontSize*XK_RATIO];
+    UIFont *xkFont = [UIFont fontWithName:font.fontName size:fontSize*XK_RATIO];
     [self xk_setFont:xkFont];
 }
 
