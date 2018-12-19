@@ -33,7 +33,9 @@
     
     [self xk_initWithCoder:aDecoder];
     
-    if (self) self.font = [UIFont fontWithName:self.font.familyName size:self.font.pointSize];
+    if (self) {
+        self.font = [UIFont fontWithName:self.font.fontName size:self.font.pointSize];
+    }
     
     return self;
 }
@@ -45,7 +47,6 @@
         return;
     }
     CGFloat fontSize = font.pointSize;
-//    UIFont *xkFont   = [UIFont fontWithName:font.familyName size:fontSize*XK_RATIO];
     UIFont *xkFont = [UIFont fontWithName:font.fontName size:fontSize*XK_RATIO];
     
     [self xk_setFont:xkFont];

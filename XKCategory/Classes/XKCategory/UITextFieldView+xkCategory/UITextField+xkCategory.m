@@ -70,7 +70,7 @@
     self.insertLimit.maxLength   = 300;
     self.insertLimit.filterEmoji = YES;
     [self.insertLimit xk_starLimitingTextField:self];
-    self.font = [UIFont fontWithName:self.font.familyName size:self.font.pointSize];
+    self.font = [UIFont fontWithName:self.font.fontName size:self.font.pointSize];
 }
 
 - (void)setInsertLimit:(XKInsertLimiter *)insertLimit {
@@ -86,10 +86,9 @@
         [self xk_setFont:font];
         return;
     }
-     CGFloat fontSize = font.pointSize;
-//     UIFont *xkFont   = [UIFont fontWithName:font.familyName size:fontSize*XK_RATIO];
+    CGFloat fontSize = font.pointSize;
     UIFont *xkFont = [UIFont fontWithName:font.fontName size:fontSize*XK_RATIO];
-      [self xk_setFont:xkFont];
+    [self xk_setFont:xkFont];
 }
 
 - (void)setDoNotAdjustFont:(BOOL)doNotAdjustFont {
