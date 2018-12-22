@@ -26,5 +26,18 @@
     [viewControllers removeObjectsInRange:range];
     self.viewControllers = viewControllers;
 }
+- (void)xk_removeViewControllers:(NSArray *)vcs {
+    NSMutableArray *viewControllers = [NSMutableArray arrayWithArray:self.viewControllers];
+    [viewControllers removeObjectsInArray:vcs];
+    self.viewControllers = viewControllers;
+}
+- (void)xk_insertViewController:(UIViewController *)vc atIndex:(NSInteger)index {
+    NSMutableArray *viewControllers = [NSMutableArray arrayWithArray:self.viewControllers];
+    if (viewControllers.count < index) {
+        return;
+    }
+    [viewControllers insertObject:vc atIndex:index];
+    self.viewControllers = viewControllers;
+}
 
 @end

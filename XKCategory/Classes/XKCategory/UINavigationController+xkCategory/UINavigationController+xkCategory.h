@@ -16,5 +16,9 @@
 - (void)xk_removeViewControllerFromIndex:(NSUInteger)index;
 ///移除子控制器
 - (void)xk_removeViewControllerWithRange:(NSRange)range;
+///移除子控制器
+- (void)xk_removeViewControllers:(NSArray *)vcs;
+///插入控制器
+- (void)xk_insertViewController:(UIViewController *)vc atIndex:(NSInteger)index;
 
 @end
