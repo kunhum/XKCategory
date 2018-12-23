@@ -40,5 +40,13 @@
  */
 + (UIImage *)image:(UIImage *)image byScalingToSize:(CGSize)targetSize;
 
+/**
+ 创建二维码
+ 
+ @param codeString 字符串,url时传@"http://xxx"即可
+ @param size 尺寸
+ @return 二维码
+ */
++ (UIImage *)xk_createQRCodeWithString:(NSString *)codeString size:(CGFloat)size;
 
 @end
