@@ -147,11 +147,10 @@
     UIGraphicsBeginImageContextWithOptions(imageViewSize, NO, 0.0);
     [self drawInRect:CGRectMake(0, 0, imageViewSize.width, imageViewSize.height)];
     CGFloat scale = 0.2;
-    CGFloat margin = 5;
     CGFloat waterW = imageViewSize.width * scale;
     CGFloat waterH = imageViewSize.height * scale;
-    CGFloat waterX = imageViewSize.width - waterW - margin;
-    CGFloat waterY = imageViewSize.height - waterH - margin;
+    CGFloat waterX = (imageViewSize.width - waterW) / 2.0;
+    CGFloat waterY = (imageViewSize.height - waterH) / 2.0;
     [waterImage drawInRect:CGRectMake(waterX, waterY, waterW, waterH)];
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
@@ -167,13 +166,13 @@
 /**
  *  修改图片size
  *
- *  @param image      原图片
  *  @param targetSize 要修改的size
  *
  *  @return 修改后的图片
  */
-+ (UIImage *)image:(UIImage *)image byScalingToSize:(CGSize)targetSize {
-    UIImage *sourceImage = image;
+- (UIImage *)xk_imageScalingToSize:(CGSize)targetSize {
+    
+    UIImage *sourceImage = self;
     UIImage *newImage = nil;
     
     UIGraphicsBeginImageContext(targetSize);
@@ -228,6 +227,16 @@
     CGImageRelease(bitmapImage);
     
     return [UIImage imageWithCGImage:scaledImage];
+}
+
+#pragma mark 创建带图片二维码
++ (UIImage *)xk_createQRCodeWithString:(NSString *)codeString waterImage:(UIImage *)waterImage size:(CGFloat)size {
+    
+    UIImage *qrCodeImage = [self xk_createQRCodeWithString:codeString size:size];
+    CGSize waterSize = CGSizeMake(size * 0.2, size * 0.2);
+    UIImage *centerImage = [waterImage xk_imageScalingToSize:waterSize];
+    //加水印
+    return [qrCodeImage xk_waterImageWithImage:centerImage];
 }
 
 @end

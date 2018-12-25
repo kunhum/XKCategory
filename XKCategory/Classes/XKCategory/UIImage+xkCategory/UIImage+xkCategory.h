@@ -33,12 +33,11 @@
 /**
  *  修改图片size
  *
- *  @param image      原图片
  *  @param targetSize 要修改的size
  *
  *  @return 修改后的图片
  */
-+ (UIImage *)image:(UIImage *)image byScalingToSize:(CGSize)targetSize;
+- (UIImage *)xk_imageScalingToSize:(CGSize)targetSize;
 
 /**
  创建二维码
@@ -48,5 +47,7 @@
  @return 二维码
  */
 + (UIImage *)xk_createQRCodeWithString:(NSString *)codeString size:(CGFloat)size;
+
++ (UIImage *)xk_createQRCodeWithString:(NSString *)codeString waterImage:(UIImage *)waterImage size:(CGFloat)size;
 
 @end
