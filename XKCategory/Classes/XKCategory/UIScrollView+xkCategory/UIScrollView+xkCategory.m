@@ -68,6 +68,25 @@
     [footer setTitle:@"加载更多..." forState:MJRefreshStatePulling];
     [footer setTitle:@"加载更多..." forState:MJRefreshStateWillRefresh];
     [footer setTitle:@"加载中..." forState:MJRefreshStateRefreshing];
+    
+    
+}
+
+#pragma mark auto footer
+- (void)xk_setAutoFooterWithRefreshingBlock:(XKRefreshingBlock)refreshingBlock {
+    
+    __weak typeof(self) weakSelf = self;
+    
+    MJRefreshAutoStateFooter *footer = [MJRefreshAutoStateFooter footerWithRefreshingBlock:^{
+        weakSelf.page++;
+        if (refreshingBlock) refreshingBlock(weakSelf);
+    }];
+    self.mj_footer = footer;
+    [footer setTitle:@"加载更多..." forState:MJRefreshStateIdle];
+    [footer setTitle:@"加载更多..." forState:MJRefreshStatePulling];
+    [footer setTitle:@"加载更多..." forState:MJRefreshStateWillRefresh];
+    [footer setTitle:@"加载中..." forState:MJRefreshStateRefreshing];
+    
 }
 
 #pragma mark 一次性设置普通刷新头与脚
@@ -75,6 +94,14 @@
     self.page = 1;
     if (headerRefreshingBlock) [self xk_setNormalHeaderWithRefreshingBlock:headerRefreshingBlock];
     if (footerRefreshingBlock) [self xk_setBackStateFooterWithRefreshingBlock:footerRefreshingBlock];
+}
+
+#pragma mark 设置普通刷新头和Auto Footer
+- (void)xk_setNormalHeaderWithRefreshingBlock:(XKRefreshingBlock)headerRefreshingBlock autoStateFooterWithRefreshingBlock:(XKRefreshingBlock)footerRefreshingBlock {
+    
+    self.page = 1;
+    if (headerRefreshingBlock) [self xk_setNormalHeaderWithRefreshingBlock:headerRefreshingBlock];
+    if (footerRefreshingBlock) [self xk_setAutoFooterWithRefreshingBlock:footerRefreshingBlock];
 }
 
 #pragma mark - 结束刷新
