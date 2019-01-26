@@ -297,4 +297,27 @@ static NSCharacterSet *VariationSelectors = nil;
     return result;
 }
 
+#pragma mark 处理字符串中的中文
+- (NSString *)xk_encodeChinese {
+    
+    BOOL hasChinese = [self xk_containChinese];
+    NSString *afterHandleStr = self;
+    if (hasChinese) {
+        afterHandleStr = [afterHandleStr stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet characterSetWithCharactersInString:@"`#%^{}\"[]|\\<> "].invertedSet];
+    }
+    return afterHandleStr;
+}
+
+#pragma mark 是否包含中文
+- (BOOL)xk_containChinese {
+    
+    for(int i = 0; i < [self length]; i++){
+        int a = [self characterAtIndex:i];
+        if( a > 0x4e00 && a < 0x9fff) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
 @end

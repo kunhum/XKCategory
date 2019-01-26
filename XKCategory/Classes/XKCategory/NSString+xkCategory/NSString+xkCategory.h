@@ -72,4 +72,10 @@
 ///验证字符串是否符合
 - (BOOL)xk_validateWithCharacterSetInString:(NSString *)characters;
 
+///处理中文，例如在url中有中文
+- (NSString *)xk_encodeChinese;
+
+///判断字符串中是否有中文
+- (BOOL)xk_containChinese;
+
 @end
