@@ -223,10 +223,9 @@ static NSCharacterSet *VariationSelectors = nil;
 
 #pragma mark h5适配WKWebview
 - (NSString *)xk_fitHtmlForWKWebViewWithWidth:(CGFloat)width {
-    NSString *headerString = @"<header><meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no'></header>";
-    NSString *str = [NSString stringWithFormat:@"<head><style>img{max-width:%fpx;height:auto !important;}</style></head>",width==0 ? XK_SCREEN_WIDTH-20.0 : width];
-    str = [headerString stringByAppendingString:str];
-    return [str stringByAppendingString:self];
+    
+    NSString *header = [NSString stringWithFormat:@"<header><meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no'></header><head><style>img{max-width:%fpx !important;}</style></head>",width == 0.0 ? (XK_SCREEN_WIDTH - 16.0) : width];
+    return [header stringByAppendingString:self];
 }
 
 #pragma mark 带声调的拼音
