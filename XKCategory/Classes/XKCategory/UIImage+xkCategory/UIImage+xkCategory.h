@@ -50,4 +50,12 @@
 
 + (UIImage *)xk_createQRCodeWithString:(NSString *)codeString waterImage:(UIImage *)waterImage size:(CGFloat)size;
 
+/**
+ 获取视频第一帧图片
+ 
+ @param path 视频地址
+ @return 第一帧图片
+ */
++ (UIImage *)xk_getVideoCover:(NSURL *)path;
+
 @end

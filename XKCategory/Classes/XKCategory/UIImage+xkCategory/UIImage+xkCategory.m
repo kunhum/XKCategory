@@ -7,6 +7,9 @@
 //
 
 #import "UIImage+xkCategory.h"
+#import <AVFoundation/AVAsset.h>
+#import <AVFoundation/AVAssetImageGenerator.h>
+#import <AVFoundation/AVTime.h>
 
 @implementation UIImage (xkCategory)
 
@@ -87,7 +90,7 @@
         lastDataLength = data.length;
         CGFloat ratio  = (CGFloat)maxBytes / data.length;
         CGSize size    = CGSizeMake((NSUInteger)(resultImage.size.width * sqrtf(ratio)),
-                                 (NSUInteger)(resultImage.size.height * sqrtf(ratio))); // Use NSUInteger to prevent white blank
+                                    (NSUInteger)(resultImage.size.height * sqrtf(ratio))); // Use NSUInteger to prevent white blank
         UIGraphicsBeginImageContext(size);
         [resultImage drawInRect:CGRectMake(0, 0, size.width, size.height)];
         resultImage = UIGraphicsGetImageFromCurrentImageContext();
@@ -237,6 +240,22 @@
     UIImage *centerImage = [waterImage xk_imageScalingToSize:waterSize];
     //加水印
     return [qrCodeImage xk_waterImageWithImage:centerImage];
+}
+
+#pragma mark 获取视频第一帧图片
++ (UIImage *)xk_getVideoCover:(NSURL *)path {
+    
+    AVURLAsset *asset               = [[AVURLAsset alloc] initWithURL:path options:nil];
+    AVAssetImageGenerator *assetGen = [[AVAssetImageGenerator alloc] initWithAsset:asset];
+    assetGen.appliesPreferredTrackTransform = YES;
+    CMTime time         = CMTimeMakeWithSeconds(0.0, 600);
+    NSError *error      = nil;
+    CMTime actualTime;
+    CGImageRef image    = [assetGen copyCGImageAtTime:time actualTime:&actualTime error:&error];
+    UIImage *videoImage = [[UIImage alloc] initWithCGImage:image];
+    CGImageRelease(image);
+    
+    return videoImage;
 }
 
 @end
