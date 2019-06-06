@@ -1209,36 +1209,6 @@
 			};
 			name = Release;
 		};
-		7644F660A32EC8ACEBF4BC31C809AB2F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2757CC105736C78BD2C41E9B986A1500 /* XKCategory.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/XKCategory/XKCategory-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/XKCategory/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/XKCategory/XKCategory.modulemap";
-				PRODUCT_MODULE_NAME = XKCategory;
-				PRODUCT_NAME = XKCategory;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		9128283A2FE60CA63DFE0E259C40046C /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 89675D2920093C3DDEFBFE16465C1E11 /* Pods-XKCategory_Tests.release.xcconfig */;
@@ -1273,7 +1243,7 @@
 			};
 			name = Release;
 		};
-		A2E81042AAC75FE93D2C642EC25D2496 /* Release */ = {
+		AA522946032C608D2781F42420CC5832 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2757CC105736C78BD2C41E9B986A1500 /* XKCategory.xcconfig */;
 			buildSettings = {
@@ -1289,7 +1259,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/XKCategory/XKCategory-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/XKCategory/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/XKCategory/XKCategory.modulemap";
 				PRODUCT_MODULE_NAME = XKCategory;
@@ -1298,11 +1268,10 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		BEFDB93BF207328A04F1220475D02C3B /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1402,6 +1371,37 @@
 			};
 			name = Release;
 		};
+		C2EE0E9605D540ED5D107DF5578CDA4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2757CC105736C78BD2C41E9B986A1500 /* XKCategory.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/XKCategory/XKCategory-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/XKCategory/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/XKCategory/XKCategory.modulemap";
+				PRODUCT_MODULE_NAME = XKCategory;
+				PRODUCT_NAME = XKCategory;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		C6F7B3C80C39943596036644EA5CFEA4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8DB83D096CC9A5644130319A7BD904E0 /* XKInsertLimit.xcconfig */;
@@ -1469,8 +1469,8 @@
 		02722F807BFE050ECF27801ECB5D0589 /* Build configuration list for PBXNativeTarget "XKCategory" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7644F660A32EC8ACEBF4BC31C809AB2F /* Debug */,
-				A2E81042AAC75FE93D2C642EC25D2496 /* Release */,
+				AA522946032C608D2781F42420CC5832 /* Debug */,
+				C2EE0E9605D540ED5D107DF5578CDA4F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
