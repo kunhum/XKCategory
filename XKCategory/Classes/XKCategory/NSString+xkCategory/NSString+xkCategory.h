@@ -12,6 +12,19 @@
 
 @interface NSString (xkCategory)
 
+/// 生成随机字符串
++ (NSString *)xk_getARCString:(NSInteger)place;
+
+/**
+ iOS13之后，NSData转换成HexString(16进制字符串)
+ 可用在获取deviceToken字符串等场景
+ 因为获取DeviceToken字符串的过程就是将NSData转换成HexString
+
+ @param data 需要转换成字符串的data
+ @return 字符串
+ */
++ (NSString *)xk_getHexStringFromData:(NSData *)data;
+
 ///将汉字转换为拼音
 - (NSString *)xk_pinyinOfName;
 
@@ -32,9 +45,6 @@
 
 ///删除emoji
 - (instancetype)xk_stringByRemovingEmoji;
-
-/// 生成随机字符串
-+ (NSString *)xk_getARCString:(NSInteger)place;
 
 ///处理html字符串中的图片，达到适配设备的效果
 - (NSString *)xk_webImageFitToDeviceSize;

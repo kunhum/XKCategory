@@ -1,47 +1,26 @@
 PODS:
-  - MJRefresh (3.1.15.7)
-  - XKCategory (1.1.5):
-    - "XKCategory/NSDate+xkCategory (= 1.1.5)"
-    - "XKCategory/NSString+xkCategory (= 1.1.5)"
-    - "XKCategory/UIButton+xkCategory (= 1.1.5)"
-    - XKCategory/UIColorHex (= 1.1.5)
-    - "XKCategory/UIImage+xkCategory (= 1.1.5)"
-    - "XKCategory/UILabel+xkCategory (= 1.1.5)"
-    - "XKCategory/UINavigationController+xkCategory (= 1.1.5)"
-    - "XKCategory/UIScrollView+xkCategory (= 1.1.5)"
-    - "XKCategory/UITextFieldView+xkCategory (= 1.1.5)"
-    - "XKCategory/UIView+xkCategory (= 1.1.5)"
-  - "XKCategory/NSDate+xkCategory (1.1.5)"
-  - "XKCategory/NSString+xkCategory (1.1.5)"
-  - "XKCategory/UIButton+xkCategory (1.1.5)"
-  - XKCategory/UIColorHex (1.1.5)
-  - "XKCategory/UIImage+xkCategory (1.1.5)"
-  - "XKCategory/UILabel+xkCategory (1.1.5)"
-  - "XKCategory/UINavigationController+xkCategory (1.1.5)"
-  - "XKCategory/UIScrollView+xkCategory (1.1.5)":
-    - MJRefresh
-  - "XKCategory/UITextFieldView+xkCategory (1.1.5)":
-    - XKInsertLimit
-  - "XKCategory/UIView+xkCategory (1.1.5)"
-  - XKInsertLimit (1.0.1)
+  - XKCategory (1.1.6):
+    - "XKCategory/NSDate+xkCategory (= 1.1.6)"
+    - "XKCategory/NSString+xkCategory (= 1.1.6)"
+    - "XKCategory/UIButton+xkCategory (= 1.1.6)"
+    - XKCategory/UIColorHex (= 1.1.6)
+    - "XKCategory/UIImage+xkCategory (= 1.1.6)"
+    - "XKCategory/UILabel+xkCategory (= 1.1.6)"
+    - "XKCategory/UINavigationController+xkCategory (= 1.1.6)"
+    - "XKCategory/UIScrollView+xkCategory (= 1.1.6)"
+    - "XKCategory/UITextFieldView+xkCategory (= 1.1.6)"
+    - "XKCategory/UIView+xkCategory (= 1.1.6)"
 
 DEPENDENCIES:
   - XKCategory (from `../`)
-
-SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - MJRefresh
-    - XKInsertLimit
 
 EXTERNAL SOURCES:
   XKCategory:
     :path: "../"
 
 SPEC CHECKSUMS:
-  MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
-  XKCategory: 7b37710fc4177d516585a4f0d2d1d7eda8ac1698
-  XKInsertLimit: 9fd1d9ed975267f22d0a04cd73d17bec56f50052
+  XKCategory: 591b61f1aa0d978155796510b99f49d283a084c5
 
 PODFILE CHECKSUM: 42217721f2156952524d7b3064d51536efe988a2
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.7.1

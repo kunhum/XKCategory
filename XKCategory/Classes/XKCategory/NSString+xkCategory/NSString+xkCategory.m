@@ -35,6 +35,40 @@ static NSCharacterSet *VariationSelectors = nil;
     VariationSelectors = [NSCharacterSet characterSetWithRange:NSMakeRange(0xFE00, 16)];
 }
 
+#pragma mark - 获取随机字符串
++ (NSString *)xk_getARCString:(NSInteger)place {
+    NSString *string = [[NSString alloc]init];
+    for (int i = 0; i < place; i++) {
+        int number = arc4random() % 36;
+        if (number < 10) {
+            int figure = arc4random() % 10;
+            NSString *tempString = [NSString stringWithFormat:@"%d", figure];
+            string = [string stringByAppendingString:tempString];
+        }else {
+            int figure = (arc4random() % 26) + 97;
+            char character = figure;
+            NSString *tempString = [NSString stringWithFormat:@"%c", character];
+            string = [string stringByAppendingString:tempString];
+        }
+    }
+    return string;
+}
+
+#pragma mark - iOS13之后，NSData转换成HexString(16进制字符串)
++ (NSString *)xk_getHexStringFromData:(NSData *)data {
+    
+    if (data == nil) {
+        return @"";
+    }
+    NSUInteger length = data.length;
+    char *chars = (char *)data.bytes;
+    NSMutableString *hexString = [[NSMutableString alloc] init];
+    for (NSUInteger i = 0; i < length; i++) {
+        [hexString appendString:[NSString stringWithFormat:@"%0.2hhx", chars[i]]];
+    }
+    return hexString;
+}
+
 #pragma mark -- 字符串拼接
 - (NSString *)xk_stringByAppendString:(NSString *)appendString {
     
@@ -147,25 +181,6 @@ static NSCharacterSet *VariationSelectors = nil;
 
 - (instancetype)removedEmojiString {
     return [self xk_stringByRemovingEmoji];
-}
-
-#pragma mark - 获取随机字符串
-+ (NSString *)xk_getARCString:(NSInteger)place {
-    NSString *string = [[NSString alloc]init];
-    for (int i = 0; i < place; i++) {
-        int number = arc4random() % 36;
-        if (number < 10) {
-            int figure = arc4random() % 10;
-            NSString *tempString = [NSString stringWithFormat:@"%d", figure];
-            string = [string stringByAppendingString:tempString];
-        }else {
-            int figure = (arc4random() % 26) + 97;
-            char character = figure;
-            NSString *tempString = [NSString stringWithFormat:@"%c", character];
-            string = [string stringByAppendingString:tempString];
-        }
-    }
-    return string;
 }
 
 #pragma mark -- 处理html中的图片达到适配设备的效果
