@@ -7,7 +7,6 @@
 //
 
 #import "XKViewController.h"
-#import "GTMBase64.h"
 
 @interface XKViewController ()
 
@@ -20,12 +19,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    NSString *string = @"呵呵";
-    NSData *data = [string dataUsingEncoding:NSUTF8StringEncoding];
-    NSData *baseData = [data base64EncodedDataWithOptions:NSDataBase64Encoding64CharacterLineLength];
-    NSData *gtmBaseData = [GTMBase64 encodeData:data];
-    
-    NSLog(@"%@ %@",baseData,gtmBaseData);
     
     
    

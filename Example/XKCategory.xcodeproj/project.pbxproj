@@ -23,7 +23,6 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
-		E10C49342151DC6100E64F3A /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = E10C49332151DC6100E64F3A /* GTMBase64.m */; };
 		FF12BA00298A64480B29AF56 /* Pods_XKCategory_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 754548193AFC4DBDDAE3D619 /* Pods_XKCategory_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,8 +65,6 @@
 		8CB33B4935ADEA58E485879F /* Pods-XKCategory_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XKCategory_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-XKCategory_Tests/Pods-XKCategory_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		90C48A36B0B2CC65883BA166 /* Pods_XKCategory_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XKCategory_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A77A7B66BBD31B98848D6709 /* XKCategory.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = XKCategory.podspec; path = ../XKCategory.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		E10C49322151DC6100E64F3A /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
-		E10C49332151DC6100E64F3A /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
 		E277DA6193DA8EC47B2A0FB4 /* Pods-XKCategory_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XKCategory_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-XKCategory_Example/Pods-XKCategory_Example.release.xcconfig"; sourceTree = "<group>"; };
 		F5A1F04701BF6BD291257C89 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,7 +132,6 @@
 		6003F593195388D20070C39A /* Example for XKCategory */ = {
 			isa = PBXGroup;
 			children = (
-				E10C49312151DC6100E64F3A /* GTMBase64 */,
 				6003F59C195388D20070C39A /* XKAppDelegate.h */,
 				6003F59D195388D20070C39A /* XKAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -198,16 +194,6 @@
 				8CB33B4935ADEA58E485879F /* Pods-XKCategory_Tests.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		E10C49312151DC6100E64F3A /* GTMBase64 */ = {
-			isa = PBXGroup;
-			children = (
-				E10C49322151DC6100E64F3A /* GTMBase64.h */,
-				E10C49332151DC6100E64F3A /* GTMBase64.m */,
-			);
-			name = GTMBase64;
-			path = ../../../../../GTMBase64;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -357,7 +343,6 @@
 				6003F59E195388D20070C39A /* XKAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* XKViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
-				E10C49342151DC6100E64F3A /* GTMBase64.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
