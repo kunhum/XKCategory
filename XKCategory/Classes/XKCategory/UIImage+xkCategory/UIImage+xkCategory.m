@@ -236,7 +236,7 @@
 + (UIImage *)xk_createQRCodeWithString:(NSString *)codeString waterImage:(UIImage *)waterImage size:(CGFloat)size {
     
     UIImage *qrCodeImage = [self xk_createQRCodeWithString:codeString size:size];
-    CGSize waterSize = CGSizeMake(size * 0.2, size * 0.2);
+    CGSize waterSize = CGSizeMake(size , size);
     UIImage *centerImage = [waterImage xk_imageScalingToSize:waterSize];
     //加水印
     return [qrCodeImage xk_waterImageWithImage:centerImage];
