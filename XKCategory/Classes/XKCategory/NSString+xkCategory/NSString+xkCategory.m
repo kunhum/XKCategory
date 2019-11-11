@@ -40,10 +40,10 @@ static NSCharacterSet *VariationSelectors = nil;
     
     NSString *priceText = [NSString stringWithFormat:@"%.2f", floatValue];
     if ([priceText hasSuffix:@".00"]) {
-        priceText = [priceText substringToIndex:1];
+        priceText = [priceText stringByReplacingOccurrencesOfString:@".00" withString:@""];
     }
     else if ([priceText hasSuffix:@"0"]) {
-        priceText = [priceText substringToIndex:3];
+        priceText = [priceText substringToIndex:priceText.length-1];
     }
     return priceText;
 }
