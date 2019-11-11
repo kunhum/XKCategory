@@ -36,7 +36,7 @@ static NSCharacterSet *VariationSelectors = nil;
 }
 
 #pragma mark 格式化.2f
-+ (NSString *)formatterFloat:(CGFloat)floatValue {
++ (NSString *)xk_formatterFloat:(CGFloat)floatValue {
     
     NSString *priceText = [NSString stringWithFormat:@"%.2f", floatValue];
     if ([priceText hasSuffix:@".00"]) {

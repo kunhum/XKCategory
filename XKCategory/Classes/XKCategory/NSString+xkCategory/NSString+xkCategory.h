@@ -20,7 +20,7 @@
  
  @return 格式化后的小数
  */
-+ (NSString *)formatterFloat:(CGFloat)floatValue;
++ (NSString *)xk_formatterFloat:(CGFloat)floatValue;
 
 ///将汉字转换为拼音
 - (NSString *)xk_pinyinOfName;
