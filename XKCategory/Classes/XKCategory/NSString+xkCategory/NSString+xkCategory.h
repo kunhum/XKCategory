@@ -12,6 +12,16 @@
 
 @interface NSString (xkCategory)
 
+/**
+ 格式化.2f
+ eg：3.00 显示3
+ 3.10显示3.1
+ 3.01显示3.01
+ 
+ @return 格式化后的小数
+ */
++ (NSString *)formatterFloat:(CGFloat)floatValue;
+
 ///将汉字转换为拼音
 - (NSString *)xk_pinyinOfName;
 
@@ -78,8 +88,4 @@
 ///判断字符串中是否有中文
 - (BOOL)xk_containChinese;
 
-///判断字符串是否为相同或连续数字
-- (BOOL)xk_isTheSameContinuousNumberAndAlsoCheckDescend:(BOOL)descend;
-
 @end
-

@@ -35,6 +35,19 @@ static NSCharacterSet *VariationSelectors = nil;
     VariationSelectors = [NSCharacterSet characterSetWithRange:NSMakeRange(0xFE00, 16)];
 }
 
+#pragma mark 格式化.2f
++ (NSString *)formatterFloat:(CGFloat)floatValue {
+    
+    NSString *priceText = [NSString stringWithFormat:@"%.2f", floatValue];
+    if ([priceText hasSuffix:@".00"]) {
+        priceText = [priceText substringToIndex:1];
+    }
+    else if ([priceText hasSuffix:@"0"]) {
+        priceText = [priceText substringToIndex:3];
+    }
+    return priceText;
+}
+
 #pragma mark -- 字符串拼接
 - (NSString *)xk_stringByAppendString:(NSString *)appendString {
     
@@ -319,72 +332,4 @@ static NSCharacterSet *VariationSelectors = nil;
     return NO;
 }
 
-#pragma mark 判断字符串是否为相同或连续数字
-- (BOOL)xk_isTheSameContinuousNumberAndAlsoCheckDescend:(BOOL)descend {
-    
-    NSString *pincodeRegex = [NSString stringWithFormat:@"^(?=.*\\d+)(?!.*?([\\d])\\1{4})[\\d]{%ld}$",self.length];
-    NSPredicate *pincodePredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", pincodeRegex];
-    
-    NSMutableArray * arr = [NSMutableArray arrayWithCapacity:0];
-    if ([pincodePredicate evaluateWithObject:self]) {
-        
-        //遍历字符串，按字符来遍历。每个字符将通过block参数中的substring传出
-        [self enumerateSubstringsInRange:NSMakeRange(0, self.length) options:NSStringEnumerationByComposedCharacterSequences usingBlock:^(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop) {
-            //将遍历出来的字符串添加到数组中
-            [arr addObject:substring];
-            
-        }];
-        
-        BOOL isInscend = [self judgeAscend:arr];
-        BOOL isDescend = NO;
-        if (descend) {
-            isDescend = [self judgeDescend:arr];
-        }
-        if (isInscend || isDescend) {
-            return YES;
-        }
-        
-    }
-    
-    return NO;
-}
-- (BOOL)judgeAscend:(NSArray *)arr{
-    
-    int j = 0;
-    for (int i = 0; i < arr.count; i++) {
-        if (i > 0) {
-            int num = [arr[i] intValue];
-            int num1 = [arr[i-1] intValue] + 1;
-            if (num == num1) {
-                j++;
-            }
-        }
-    }
-    
-    if (j == arr.count - 1) {
-        return YES;
-    }
-    
-    return NO;
-}
-
-- (BOOL)judgeDescend:(NSArray *)arr{
-    
-    int j = 0;
-    for (int i = 0; i < arr.count; i++) {
-        if (i > 0) {
-            int num = [arr[i] intValue];
-            int num1 = [arr[i-1] intValue] - 1;
-            if (num == num1) {
-                j++;
-            }
-        }
-    }
-    if (j == arr.count - 1) {
-        return YES;
-    }
-    return NO;
-}
-
 @end
-
