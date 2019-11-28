@@ -332,4 +332,14 @@ static NSCharacterSet *VariationSelectors = nil;
     return NO;
 }
 
+#pragma mark 打电话
+- (void)xk_Phone {
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSString *phone = [NSString stringWithFormat:@"telprompt://%@",self];
+        NSURL *phoneURL = [NSURL URLWithString:phone];
+        [[UIApplication sharedApplication] openURL:phoneURL];
+    });
+}
+
 @end

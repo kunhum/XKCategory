@@ -88,4 +88,7 @@
 ///判断字符串中是否有中文
 - (BOOL)xk_containChinese;
 
+///打电话
+- (void)xk_Phone;
+
 @end
