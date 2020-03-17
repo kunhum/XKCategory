@@ -7,6 +7,7 @@
 //
 
 #import "UIView+xkCategory.h"
+#import "UIColor+ZXLazy.h"
 
 @implementation UIView (xkCategory)
 
@@ -28,6 +29,59 @@
     self.userInteractionEnabled = YES;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:target action:action];
     [self addGestureRecognizer:tap];
+}
+
+- (void)xk_setBackgroundColorToSystemColor {
+    
+    if (@available(iOS 13.0, *)) {
+        
+        if (self.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+            self.backgroundColor = UIColor.systemBackgroundColor;
+        }
+        
+    } else {
+        // Fallback on earlier versions
+    }
+    
+    
+}
+
+- (void)xk_excuteTaskInLightStyle:(nullable void (^)(void))lightStyle darkStyle:(nullable void (^)(void))darkStyle {
+    
+    if (@available(iOS 13.0, *)) {
+        
+        if (self.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+            
+            !darkStyle ?: darkStyle();
+        }
+        else {
+            
+            !lightStyle ?: lightStyle();
+        }
+        
+    } else {
+        // Fallback on earlier versions
+    }
+}
+
+- (UIColor *)xk_colorInStyleLight:(NSString *)lightColor dark:(NSString *)darkColor {
+    
+    if (@available(iOS 13.0, *)) {
+        
+        if (self.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+            
+            return [UIColor colorWithHexString:darkColor];
+        }
+        else {
+            
+            return [UIColor colorWithHexString:lightColor];
+        }
+        
+    } else {
+        // Fallback on earlier versions
+        
+        return lightColor;
+    }
 }
 
 @end
