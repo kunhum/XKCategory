@@ -32,4 +32,11 @@
 /// @param darkColor 深色
 - (UIColor *)xk_colorInStyleLight:(NSString *)lightColor dark:(NSString *)darkColor;
 
+/// 切圆角
+/// @param rect frame
+/// @param corners 圆角
+/// @param radii radii
+/// @param layerHandler layerHandler
+- (void)xk_setCornerRadiusWithRect:(CGRect)rect corners:(UIRectCorner)corners radii:(CGSize)radii layerHandler:(CAShapeLayer *(^void)(CAShapeLayer *shareLayer, UIBezierPath *maskPath))layerHandler;
+
 @end

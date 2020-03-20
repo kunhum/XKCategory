@@ -80,8 +80,25 @@
     } else {
         // Fallback on earlier versions
         
-        return lightColor;
+        return [UIColor colorWithHexString:lightColor];
     }
+}
+
+- (void)xk_setCornerRadiusWithRect:(CGRect)rect corners:(UIRectCorner)corners radii:(CGSize)radii layerHandler:(CAShapeLayer *(^)(CAShapeLayer *, UIBezierPath *))layerHandler {
+    
+    CAShapeLayer *shareLayer = [CAShapeLayer new];
+    
+    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:rect byRoundingCorners:corners cornerRadii:radii];
+    
+    shareLayer.frame = rect;
+    
+    shareLayer.path = maskPath.CGPath;
+    
+    if (layerHandler) {
+        shareLayer = layerHandler(shareLayer, maskPath);
+    }
+    
+    self.layer.mask = shareLayer;
 }
 
 @end

@@ -1,6 +1,6 @@
 {
   "name": "XKCategory",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "summary": "日常用到的分类",
   "description": "日常开发经常用到的分类",
   "homepage": "https://github.com/kunhum/XKCategory",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/kunhum/XKCategory.git",
-    "tag": "1.2.3"
+    "tag": "1.2.4"
   },
   "platforms": {
     "ios": "10.0"
