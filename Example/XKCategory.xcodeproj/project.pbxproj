@@ -23,6 +23,9 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		E173F20B2424839D0024BAA1 /* UIView+xkCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = E173F2092424839D0024BAA1 /* UIView+xkCategory.m */; };
+		E173F20C2424839D0024BAA1 /* UIView+xkFrameCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = E173F20A2424839D0024BAA1 /* UIView+xkFrameCategory.m */; };
+		E173F210242483A70024BAA1 /* UIColor+ZXLazy.m in Sources */ = {isa = PBXBuildFile; fileRef = E173F20F242483A70024BAA1 /* UIColor+ZXLazy.m */; };
 		FF12BA00298A64480B29AF56 /* Pods_XKCategory_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 754548193AFC4DBDDAE3D619 /* Pods_XKCategory_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +68,12 @@
 		8CB33B4935ADEA58E485879F /* Pods-XKCategory_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XKCategory_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-XKCategory_Tests/Pods-XKCategory_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		90C48A36B0B2CC65883BA166 /* Pods_XKCategory_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XKCategory_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A77A7B66BBD31B98848D6709 /* XKCategory.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = XKCategory.podspec; path = ../XKCategory.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		E173F2072424839D0024BAA1 /* UIView+xkFrameCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+xkFrameCategory.h"; sourceTree = "<group>"; };
+		E173F2082424839D0024BAA1 /* UIView+xkCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+xkCategory.h"; sourceTree = "<group>"; };
+		E173F2092424839D0024BAA1 /* UIView+xkCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+xkCategory.m"; sourceTree = "<group>"; };
+		E173F20A2424839D0024BAA1 /* UIView+xkFrameCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+xkFrameCategory.m"; sourceTree = "<group>"; };
+		E173F20E242483A70024BAA1 /* UIColor+ZXLazy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ZXLazy.h"; sourceTree = "<group>"; };
+		E173F20F242483A70024BAA1 /* UIColor+ZXLazy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ZXLazy.m"; sourceTree = "<group>"; };
 		E277DA6193DA8EC47B2A0FB4 /* Pods-XKCategory_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XKCategory_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-XKCategory_Example/Pods-XKCategory_Example.release.xcconfig"; sourceTree = "<group>"; };
 		F5A1F04701BF6BD291257C89 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,6 +141,8 @@
 		6003F593195388D20070C39A /* Example for XKCategory */ = {
 			isa = PBXGroup;
 			children = (
+				E173F2062424839D0024BAA1 /* UIView+xkCategory */,
+				E173F20D242483A70024BAA1 /* UIColorHex */,
 				6003F59C195388D20070C39A /* XKAppDelegate.h */,
 				6003F59D195388D20070C39A /* XKAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -196,6 +207,28 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E173F2062424839D0024BAA1 /* UIView+xkCategory */ = {
+			isa = PBXGroup;
+			children = (
+				E173F2072424839D0024BAA1 /* UIView+xkFrameCategory.h */,
+				E173F2082424839D0024BAA1 /* UIView+xkCategory.h */,
+				E173F2092424839D0024BAA1 /* UIView+xkCategory.m */,
+				E173F20A2424839D0024BAA1 /* UIView+xkFrameCategory.m */,
+			);
+			name = "UIView+xkCategory";
+			path = "../../XKCategory/Classes/XKCategory/UIView+xkCategory";
+			sourceTree = "<group>";
+		};
+		E173F20D242483A70024BAA1 /* UIColorHex */ = {
+			isa = PBXGroup;
+			children = (
+				E173F20E242483A70024BAA1 /* UIColor+ZXLazy.h */,
+				E173F20F242483A70024BAA1 /* UIColor+ZXLazy.m */,
+			);
+			name = UIColorHex;
+			path = ../../XKCategory/Classes/XKCategory/UIColorHex;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -243,7 +276,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = XK;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = kunhum;
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
@@ -343,6 +376,9 @@
 				6003F59E195388D20070C39A /* XKAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* XKViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				E173F210242483A70024BAA1 /* UIColor+ZXLazy.m in Sources */,
+				E173F20B2424839D0024BAA1 /* UIView+xkCategory.m in Sources */,
+				E173F20C2424839D0024BAA1 /* UIView+xkFrameCategory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,23 +432,37 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -436,22 +486,36 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
