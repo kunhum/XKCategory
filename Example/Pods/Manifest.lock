@@ -1,15 +1,15 @@
 PODS:
-  - XKCategory (1.2.5):
-    - "XKCategory/NSDate+xkCategory (= 1.2.5)"
-    - "XKCategory/NSString+xkCategory (= 1.2.5)"
-    - "XKCategory/UIButton+xkCategory (= 1.2.5)"
-    - XKCategory/UIColorHex (= 1.2.5)
-    - "XKCategory/UIImage+xkCategory (= 1.2.5)"
-    - "XKCategory/UILabel+xkCategory (= 1.2.5)"
-    - "XKCategory/UINavigationController+xkCategory (= 1.2.5)"
-    - "XKCategory/UIScrollView+xkCategory (= 1.2.5)"
-    - "XKCategory/UITextFieldView+xkCategory (= 1.2.5)"
-    - "XKCategory/UIView+xkCategory (= 1.2.5)"
+  - XKCategory (1.2.6):
+    - "XKCategory/NSDate+xkCategory (= 1.2.6)"
+    - "XKCategory/NSString+xkCategory (= 1.2.6)"
+    - "XKCategory/UIButton+xkCategory (= 1.2.6)"
+    - XKCategory/UIColorHex (= 1.2.6)
+    - "XKCategory/UIImage+xkCategory (= 1.2.6)"
+    - "XKCategory/UILabel+xkCategory (= 1.2.6)"
+    - "XKCategory/UINavigationController+xkCategory (= 1.2.6)"
+    - "XKCategory/UIScrollView+xkCategory (= 1.2.6)"
+    - "XKCategory/UITextFieldView+xkCategory (= 1.2.6)"
+    - "XKCategory/UIView+xkCategory (= 1.2.6)"
 
 DEPENDENCIES:
   - XKCategory (from `../`)
@@ -19,7 +19,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  XKCategory: 20830dfc3ebe417004dbd20210af5abc2a33b1e5
+  XKCategory: fa6ba4dbe300729625adebae75fc6e82e3ce9788
 
 PODFILE CHECKSUM: 42217721f2156952524d7b3064d51536efe988a2
 
