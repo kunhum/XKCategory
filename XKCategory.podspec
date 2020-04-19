@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'XKCategory'
-  s.version          = '1.2.9'
+  s.version          = '1.3.0'
   s.summary          = '日常用到的分类'
 
 # This description is used to generate tags and improve search results.
@@ -86,7 +86,6 @@ Pod::Spec.new do |s|
   s.dependency 'SVProgressHUD'
   s.dependency 'SDWebImage'
   s.dependency 'MJRefresh'
-  s.dependency 'XKBaseController'
   s.dependency 'Masonry'
   s.dependency 'XKInsertLimit'
   

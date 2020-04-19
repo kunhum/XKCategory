@@ -33,7 +33,6 @@
 #import "UIView+xkCategory.h"
 #import "UIView+xkFrameCategory.h"
 #import "UIViewController+xkCategory.h"
-#import "XKBaseTableViewController.h"
 #import "XKCategoryDefines.h"
 
 FOUNDATION_EXPORT double XKCategoryVersionNumber;

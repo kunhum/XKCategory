@@ -5,13 +5,11 @@ PODS:
     - SDWebImage/Core (= 5.7.2)
   - SDWebImage/Core (5.7.2)
   - SVProgressHUD (2.2.5)
-  - XKBaseController (1.0.3)
-  - XKCategory (1.2.9):
+  - XKCategory (1.3.0):
     - Masonry
     - MJRefresh
     - SDWebImage
     - SVProgressHUD
-    - XKBaseController
     - XKInsertLimit
   - XKInsertLimit (1.0.5)
 
@@ -24,7 +22,6 @@ SPEC REPOS:
     - MJRefresh
     - SDWebImage
     - SVProgressHUD
-    - XKBaseController
     - XKInsertLimit
 
 EXTERNAL SOURCES:
@@ -36,8 +33,7 @@ SPEC CHECKSUMS:
   MJRefresh: 3153c59a363159092c08b2177ec3a7d09f90bfaf
   SDWebImage: d9ea4959d99c52276dfada481987018fcaea3d58
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  XKBaseController: 1d07b49acf7876677b05245f6a4f8d0e1514c58b
-  XKCategory: 49682ecc1129994575a37bb2655b2cb559fa1c72
+  XKCategory: 5f38858ea789d68c88c78d2abc828c41ef6d5690
   XKInsertLimit: 5864d08ea65750cf40a5c00f06ceac4c842a61fa
 
 PODFILE CHECKSUM: 42217721f2156952524d7b3064d51536efe988a2
