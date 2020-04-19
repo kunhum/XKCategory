@@ -1,0 +1,6 @@
+framework module XKBaseController {
+  umbrella header "XKBaseController-umbrella.h"
+
+  export *
+  module * { export * }
+}
