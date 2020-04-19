@@ -336,4 +336,32 @@ static NSCharacterSet *VariationSelectors = nil;
     });
 }
 
+#pragma mrk 判断字符串是否为数字
+- (BOOL)xk_isNumber {
+    
+    if (self == nil || [self length] <= 0) {
+        return NO;
+    }
+    
+    NSCharacterSet *cs = [[NSCharacterSet characterSetWithCharactersInString:@"0123456789."] invertedSet];
+    NSString *filtered = [[self componentsSeparatedByCharactersInSet:cs] componentsJoinedByString:@""];
+    
+    if (![self isEqualToString:filtered]) {
+        return NO;
+    }
+    return YES;
+}
+
+#pragma mark 筛选出字符串中的数字
+- (NSString *)xk_fliterNumber {
+    NSMutableString *amount = [NSMutableString string];
+    for (int i = 0; i < self.length; i++) {
+        NSString *letter = [self substringWithRange:NSMakeRange(i, 1)];
+        if ([self xk_isNumber]) {
+            [amount appendString:letter];
+        }
+    }
+    return amount;
+}
+
 @end

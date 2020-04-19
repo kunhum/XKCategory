@@ -91,4 +91,9 @@
 ///打电话
 - (void)xk_Phone;
 
+///判断字符串是否为数字
+- (BOOL)xk_isNumber;
+///筛选出字符串中的数字
+- (NSString *)xk_fliterNumber;
+
 @end
