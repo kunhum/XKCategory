@@ -8,6 +8,8 @@
 
 #import "SVProgressHUD.h"
 
+#define kAnimationDuration (1.5)
+
 @interface SVProgressHUD (xkCategory)
 
 ///show loading 无遮罩
@@ -18,6 +20,12 @@
 + (void)xk_showWithStatus:(NSString *)message completed:(void(^)(void))completed;
 ///有透明遮罩
 + (void)xk_showClearMaskStatus:(NSString *)message;
+
+/// 只显示文字
+/// @param maskType 遮罩类型
+/// @param message 文本
+/// @param completed 回调
++ (void)xk_showMessage:(NSString *)message maskType:(SVProgressHUDMaskType)maskType completed:(void(^)(void))completed;
 
 + (void)xk_showLoadingWithStatus:(NSString *)message;
 + (void)xk_showErrorWithStatus:(NSString *)message completed:(void(^)(void))completed;

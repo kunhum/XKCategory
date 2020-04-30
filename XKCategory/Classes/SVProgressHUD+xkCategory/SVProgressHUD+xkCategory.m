@@ -9,8 +9,6 @@
 #import "SVProgressHUD+xkCategory.h"
 #import "XKCategoryDefines.h"
 
-#define kAnimationDuration (1.5)
-
 @implementation SVProgressHUD (xkCategory)
 
 + (void)xk_showClearMaskStatus:(NSString *)message {
@@ -117,5 +115,19 @@
     });
 }
 
+
++ (void)xk_showMessage:(NSString *)message maskType:(SVProgressHUDMaskType)maskType completed:(void (^)(void))completed {
+    
+    if (XK_CheckString(message) == NO) {
+        [SVProgressHUD dismiss];
+        return;
+    }
+    [self setDefaultMaskType:maskType];
+    [self showImage:nil status:message];
+    [self dismissWithDelay:kAnimationDuration];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kAnimationDuration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (completed) completed();
+    });
+}
 
 @end
