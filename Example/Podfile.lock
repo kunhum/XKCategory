@@ -5,7 +5,7 @@ PODS:
     - SDWebImage/Core (= 5.7.2)
   - SDWebImage/Core (5.7.2)
   - SVProgressHUD (2.2.5)
-  - XKCategory (1.3.2):
+  - XKCategory (1.3.3):
     - Masonry
     - MJRefresh
     - SDWebImage
@@ -33,7 +33,7 @@ SPEC CHECKSUMS:
   MJRefresh: 3153c59a363159092c08b2177ec3a7d09f90bfaf
   SDWebImage: d9ea4959d99c52276dfada481987018fcaea3d58
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  XKCategory: 4dc6a9b1bb7288e32c23d46e0a49b11a68c4e9c0
+  XKCategory: e664a24f54bd38d30a8e170f7dd9b92657833811
   XKInsertLimit: 5864d08ea65750cf40a5c00f06ceac4c842a61fa
 
 PODFILE CHECKSUM: 42217721f2156952524d7b3064d51536efe988a2
