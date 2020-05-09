@@ -8,6 +8,7 @@
 
 #import "UILabel+xkCategory.h"
 #import <objc/runtime.h>
+#import <CoreText/CoreText.h>
 
 #define XK_RATIO (XK_SCREEN_WIDTH/375.0)
 #define XK_SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
