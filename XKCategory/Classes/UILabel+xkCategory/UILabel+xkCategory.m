@@ -35,7 +35,28 @@
     [self xk_initWithCoder:aDecoder];
     
     if (self) {
-        self.font = [UIFont fontWithName:self.font.fontName size:self.font.pointSize];
+        
+        CGFloat fontSize   = self.font.pointSize;
+        NSString *fontName = self.font.fontName;
+        UIFont *xkFont     = nil;
+        
+        if ([fontName isEqualToString:@".SFUI-Regular"]) {
+            xkFont = [UIFont systemFontOfSize:fontSize*XK_RATIO];
+        }
+        else if ([fontName isEqualToString:@".SFUI-Bold"]) {
+            xkFont = [UIFont systemFontOfSize:fontSize*XK_RATIO weight:UIFontWeightBold];
+        }
+        else if ([fontName isEqualToString:@".SFUI-Medium"]) {
+            xkFont = [UIFont systemFontOfSize:fontSize*XK_RATIO weight:UIFontWeightMedium];
+        }
+        else if ([fontName isEqualToString:@".SFUI-Semibold"]) {
+            xkFont = [UIFont systemFontOfSize:fontSize*XK_RATIO weight:UIFontWeightSemibold];
+        }
+        else {
+            xkFont = [UIFont fontWithName:fontName size:fontSize*XK_RATIO];
+        }
+        
+        self.font = xkFont;
     }
     
     return self;
@@ -47,8 +68,27 @@
         [self xk_setFont:font];
         return;
     }
-    CGFloat fontSize = font.pointSize;
-    UIFont *xkFont = [UIFont fontWithName:font.fontName size:fontSize*XK_RATIO];
+    CGFloat fontSize   = font.pointSize;
+    
+    NSString *fontName = font.fontName;
+    
+    UIFont *xkFont     = nil;
+    
+    if ([fontName isEqualToString:@".SFUI-Regular"]) {
+        xkFont = [UIFont systemFontOfSize:fontSize*XK_RATIO];
+    }
+    else if ([fontName isEqualToString:@".SFUI-Bold"]) {
+        xkFont = [UIFont systemFontOfSize:fontSize*XK_RATIO weight:UIFontWeightBold];
+    }
+    else if ([fontName isEqualToString:@".SFUI-Medium"]) {
+        xkFont = [UIFont systemFontOfSize:fontSize*XK_RATIO weight:UIFontWeightMedium];
+    }
+    else if ([fontName isEqualToString:@".SFUI-Semibold"]) {
+        xkFont = [UIFont systemFontOfSize:fontSize*XK_RATIO weight:UIFontWeightSemibold];
+    }
+    else {
+        xkFont = [UIFont fontWithName:fontName size:fontSize*XK_RATIO];
+    }
     
     [self xk_setFont:xkFont];
 }

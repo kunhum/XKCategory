@@ -12,7 +12,6 @@
 
 + (UIFont *)fl_mediumFontWithSize:(CGFloat)size {
     
-    return [UIFont fontWithName:@"PingFang-SC-Medium" size:size];
+    return [UIFont systemFontOfSize:size weight:UIFontWeightMedium];
 }
-
 @end

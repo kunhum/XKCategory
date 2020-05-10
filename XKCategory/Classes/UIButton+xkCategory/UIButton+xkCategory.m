@@ -40,8 +40,26 @@
 #pragma mark 适配文字
 - (void)xk_adjustFont {
     
-    CGFloat fontSize = self.titleLabel.font.pointSize;
-    UIFont *xkFont   = [UIFont fontWithName:self.titleLabel.font.familyName size:fontSize*XK_RATIO];
+    CGFloat fontSize   = self.titleLabel.font.pointSize;
+    NSString *fontName = self.titleLabel.font.fontName;
+    UIFont *xkFont     = nil;
+    
+    if ([fontName isEqualToString:@".SFUI-Regular"]) {
+        xkFont = [UIFont systemFontOfSize:fontSize*XK_RATIO];
+    }
+    else if ([fontName isEqualToString:@".SFUI-Bold"]) {
+        xkFont = [UIFont systemFontOfSize:fontSize*XK_RATIO weight:UIFontWeightBold];
+    }
+    else if ([fontName isEqualToString:@".SFUI-Medium"]) {
+        xkFont = [UIFont systemFontOfSize:fontSize*XK_RATIO weight:UIFontWeightMedium];
+    }
+    else if ([fontName isEqualToString:@".SFUI-Semibold"]) {
+        xkFont = [UIFont systemFontOfSize:fontSize*XK_RATIO weight:UIFontWeightSemibold];
+    }
+    else {
+        xkFont = [UIFont fontWithName:fontName size:fontSize*XK_RATIO];
+    }
+    
     self.titleLabel.font = xkFont;
 }
 

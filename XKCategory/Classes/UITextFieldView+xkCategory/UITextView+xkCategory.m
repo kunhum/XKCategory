@@ -52,7 +52,30 @@
     self.insertLimit.maxLength   = 0;
     self.insertLimit.filterEmoji = YES;
     [self.insertLimit xk_starLimitingTextView:self];
-    self.font = [UIFont fontWithName:self.font.fontName size:self.font.pointSize];
+    
+    CGFloat fontSize   = self.font.pointSize;
+    
+    NSString *fontName = self.font.fontName;
+    
+    UIFont *xkFont     = nil;
+    
+    if ([fontName isEqualToString:@".SFUI-Regular"]) {
+        xkFont = [UIFont systemFontOfSize:fontSize*XK_RATIO];
+    }
+    else if ([fontName isEqualToString:@".SFUI-Bold"]) {
+        xkFont = [UIFont systemFontOfSize:fontSize*XK_RATIO weight:UIFontWeightBold];
+    }
+    else if ([fontName isEqualToString:@".SFUI-Medium"]) {
+        xkFont = [UIFont systemFontOfSize:fontSize*XK_RATIO weight:UIFontWeightMedium];
+    }
+    else if ([fontName isEqualToString:@".SFUI-Semibold"]) {
+        xkFont = [UIFont systemFontOfSize:fontSize*XK_RATIO weight:UIFontWeightSemibold];
+    }
+    else {
+        xkFont = [UIFont fontWithName:fontName size:fontSize*XK_RATIO];
+    }
+    
+    self.font = xkFont;
 }
 
 - (void)setInsertLimit:(XKInsertLimiter *)insertLimit {
@@ -68,8 +91,29 @@
         [self xk_setFont:font];
         return;
     }
-    CGFloat fontSize = font.pointSize;
-    UIFont *xkFont = [UIFont fontWithName:font.fontName size:fontSize*XK_RATIO];
+    
+    CGFloat fontSize   = self.font.pointSize;
+    
+    NSString *fontName = self.font.fontName;
+    
+    UIFont *xkFont     = nil;
+    
+    if ([fontName isEqualToString:@".SFUI-Regular"]) {
+        xkFont = [UIFont systemFontOfSize:fontSize*XK_RATIO];
+    }
+    else if ([fontName isEqualToString:@".SFUI-Bold"]) {
+        xkFont = [UIFont systemFontOfSize:fontSize*XK_RATIO weight:UIFontWeightBold];
+    }
+    else if ([fontName isEqualToString:@".SFUI-Medium"]) {
+        xkFont = [UIFont systemFontOfSize:fontSize*XK_RATIO weight:UIFontWeightMedium];
+    }
+    else if ([fontName isEqualToString:@".SFUI-Semibold"]) {
+        xkFont = [UIFont systemFontOfSize:fontSize*XK_RATIO weight:UIFontWeightSemibold];
+    }
+    else {
+        xkFont = [UIFont fontWithName:fontName size:fontSize*XK_RATIO];
+    }
+    
     [self xk_setFont:xkFont];
 }
 
