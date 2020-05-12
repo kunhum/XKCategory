@@ -92,9 +92,9 @@
         return;
     }
     
-    CGFloat fontSize   = self.font.pointSize;
+    CGFloat fontSize   = font.pointSize;
     
-    NSString *fontName = self.font.fontName;
+    NSString *fontName = font.fontName;
     
     UIFont *xkFont     = nil;
     
