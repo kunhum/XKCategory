@@ -239,6 +239,7 @@ static NSCharacterSet *VariationSelectors = nil;
 - (NSString *)xk_stringToMandarinLatin {
     NSMutableString *ms = [[NSMutableString alloc] initWithString:self];
     CFStringTransform((__bridge CFMutableStringRef)ms, 0, kCFStringTransformMandarinLatin, NO);
+    
     return ms;
 }
 #pragma mark 不带声调的拼音

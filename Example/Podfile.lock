@@ -1,11 +1,11 @@
 PODS:
   - Masonry (1.1.0)
   - MJRefresh (3.4.1)
-  - SDWebImage (5.7.2):
-    - SDWebImage/Core (= 5.7.2)
-  - SDWebImage/Core (5.7.2)
+  - SDWebImage (5.8.1):
+    - SDWebImage/Core (= 5.8.1)
+  - SDWebImage/Core (5.8.1)
   - SVProgressHUD (2.2.5)
-  - XKCategory (1.3.5):
+  - XKCategory (1.3.7):
     - Masonry
     - MJRefresh
     - SDWebImage
@@ -20,9 +20,10 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Masonry
     - MJRefresh
-    - SDWebImage
     - SVProgressHUD
     - XKInsertLimit
+  trunk:
+    - SDWebImage
 
 EXTERNAL SOURCES:
   XKCategory:
@@ -31,9 +32,9 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: 3153c59a363159092c08b2177ec3a7d09f90bfaf
-  SDWebImage: d9ea4959d99c52276dfada481987018fcaea3d58
+  SDWebImage: e3eae2eda88578db0685a0c88597fdadd9433f05
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  XKCategory: 01af5536499ab241de1d8dff894cf5ba1066e517
+  XKCategory: 16e374eb58a329a689d7a398a62bafbd861124b6
   XKInsertLimit: 5864d08ea65750cf40a5c00f06ceac4c842a61fa
 
 PODFILE CHECKSUM: 42217721f2156952524d7b3064d51536efe988a2

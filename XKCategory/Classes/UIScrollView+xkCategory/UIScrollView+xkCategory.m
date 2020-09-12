@@ -10,6 +10,8 @@
 #import "MJRefresh.h"
 #import <objc/runtime.h>
 
+static NSString *XK_SCROLLVIEW_ORIGINAL_PAGE = @"XK_SCROLLVIEW_ORIGINAL_PAGE";
+
 @implementation UIScrollView (xkCategory)
 
 //#pragma mark - 设置刷新头
@@ -47,7 +49,7 @@
 - (void)xk_setNormalHeaderWithRefreshingBlock:(XKRefreshingBlock)refreshingBlock {
     __weak typeof(self) weakSelf = self;
     MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        weakSelf.page = 1;
+        weakSelf.page = (int)[[NSUserDefaults standardUserDefaults] integerForKey:XK_SCROLLVIEW_ORIGINAL_PAGE];
         if (weakSelf.mj_footer) [weakSelf.mj_footer resetNoMoreData];
         if (refreshingBlock) refreshingBlock(weakSelf);
     }];
@@ -91,15 +93,14 @@
 
 #pragma mark 一次性设置普通刷新头与脚
 - (void)xk_setNormalHeaderWithRefreshingBlock:(XKRefreshingBlock)headerRefreshingBlock backStateFooterWithRefreshingBlock:(XKRefreshingBlock)footerRefreshingBlock {
-    self.page = 1;
+    self.page = (int)[[NSUserDefaults standardUserDefaults] integerForKey:XK_SCROLLVIEW_ORIGINAL_PAGE];
     if (headerRefreshingBlock) [self xk_setNormalHeaderWithRefreshingBlock:headerRefreshingBlock];
     if (footerRefreshingBlock) [self xk_setBackStateFooterWithRefreshingBlock:footerRefreshingBlock];
 }
 
 #pragma mark 设置普通刷新头和Auto Footer
 - (void)xk_setNormalHeaderWithRefreshingBlock:(XKRefreshingBlock)headerRefreshingBlock autoStateFooterWithRefreshingBlock:(XKRefreshingBlock)footerRefreshingBlock {
-    
-    self.page = 1;
+    self.page = (int)[[NSUserDefaults standardUserDefaults] integerForKey:XK_SCROLLVIEW_ORIGINAL_PAGE];
     if (headerRefreshingBlock) [self xk_setNormalHeaderWithRefreshingBlock:headerRefreshingBlock];
     if (footerRefreshingBlock) [self xk_setAutoFooterWithRefreshingBlock:footerRefreshingBlock];
 }
@@ -111,12 +112,18 @@
     if (self.mj_footer.isRefreshing) [self.mj_footer endRefreshing];
 }
 
-- (void)setPage:(NSInteger)page {
+- (void)setPage:(int)page {
     objc_setAssociatedObject(self, @"page", @(page), OBJC_ASSOCIATION_ASSIGN);
 }
-- (NSInteger)page {
+- (int)page {
     NSNumber *number = objc_getAssociatedObject(self, @"page");
-    return number.integerValue;
+    return number.intValue;
+}
+
+#pragma mark 设置默认初始下标
++ (void)xk_setScrollViewOriginalPage:(int)originalPage {
+    [[NSUserDefaults standardUserDefaults] setInteger:originalPage forKey:XK_SCROLLVIEW_ORIGINAL_PAGE];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 #pragma mark 设置contentInsetAdjustmentBehavior
