@@ -27,6 +27,9 @@
     
     return img;
 }
++ (UIImage *)xk_imageWithColor:(UIColor *)color {
+    return [self xk_imageWithColor:color frame:CGRectMake(0.0, 0.0, 1.0, 1.0)];
+}
 #pragma mark 截屏
 + (UIImage *)xk_screenShot {
     

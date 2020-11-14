@@ -12,6 +12,8 @@
 
 ///根据颜色创建图片
 + (UIImage*)xk_imageWithColor:(UIColor *)color frame:(CGRect)colorFrame;
+///根据颜色创建图片
++ (UIImage*)xk_imageWithColor:(UIColor *)color;
 ///截屏
 + (UIImage *)xk_screenShot;
 ///截取view生成图片

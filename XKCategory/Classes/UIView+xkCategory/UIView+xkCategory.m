@@ -83,11 +83,11 @@
     }
 }
 
-- (void)xk_setCornerRadiusWithRect:(CGRect)rect corners:(UIRectCorner)corners radii:(CGSize)radii layerHandler:(CAShapeLayer *(^)(CAShapeLayer *, UIBezierPath *))layerHandler {
+- (void)xk_setCornerRadiusWithRect:(CGRect)rect corners:(UIRectCorner)corners radii:(CGFloat)radii layerHandler:(CAShapeLayer *(^)(CAShapeLayer *, UIBezierPath *))layerHandler {
     
     CAShapeLayer *shareLayer = [CAShapeLayer new];
     
-    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:rect byRoundingCorners:corners cornerRadii:radii];
+    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:rect byRoundingCorners:corners cornerRadii:CGSizeMake(radii, radii)];
     
     shareLayer.frame = rect;
     
