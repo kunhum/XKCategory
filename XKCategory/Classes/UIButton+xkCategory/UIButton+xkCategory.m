@@ -18,23 +18,29 @@
 + (void)load {
     [super load];
     
-    Method codeInitMethod   = class_getInstanceMethod(self, @selector(initWithCoder:));
-    Method xkCodeInitMethod = class_getInstanceMethod(self, @selector(xk_initWithCoder:));
-    if (XK_SMALL_SCREEN) {
-        method_exchangeImplementations(codeInitMethod, xkCodeInitMethod);
-    }
+//    Method codeInitMethod   = class_getInstanceMethod(self, @selector(initWithCoder:));
+//    Method xkCodeInitMethod = class_getInstanceMethod(self, @selector(xk_initWithCoder:));
+//    if (XK_SMALL_SCREEN) {
+//        method_exchangeImplementations(codeInitMethod, xkCodeInitMethod);
+//    }
 }
 
-- (instancetype)xk_initWithCoder:(NSCoder *)aDecoder {
+//- (instancetype)xk_initWithCoder:(NSCoder *)aDecoder {
+//
+//    [self xk_initWithCoder:aDecoder];
+//
+//    if (self) {
+//
+//        [self xk_adjustFont];
+//    }
+//
+//    return self;
+//}
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
     
-    [self xk_initWithCoder:aDecoder];
-    
-    if (self) {
-        
-        [self xk_adjustFont];
-    }
-    
-    return self;
+    [self xk_adjustFont];
 }
 
 #pragma mark 适配文字
