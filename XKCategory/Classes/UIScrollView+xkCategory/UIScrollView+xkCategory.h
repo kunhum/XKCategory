@@ -13,10 +13,10 @@ typedef void(^XKRefreshingBlock)(UIScrollView *currentScrollView);
 @interface UIScrollView (xkCategory)
 
 ///网络请求下标
-@property (nonatomic, assign) int page;
+@property (nonatomic, assign) NSInteger page;
 
 ///设置初始的请求下标，默认为1，在下拉刷新时将page重置为该值
-+ (void)xk_setScrollViewOriginalPage:(int)originalPage;
++ (void)xk_setScrollViewOriginalPage:(NSInteger)originalPage;
 
 ///设置刷新脚
 - (void)xk_setBackStateFooterWithRefreshingBlock:(XKRefreshingBlock)refreshingBlock;
