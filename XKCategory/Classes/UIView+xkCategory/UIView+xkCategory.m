@@ -100,6 +100,16 @@
     self.layer.mask = shareLayer;
 }
 
+- (void)xk_setCornerRadiusWithRect:(CGRect)rect corners:(UIRectCorner)corners radiiSize:(CGSize)radii layerHandler:(CAShapeLayer *(^)(CAShapeLayer *, UIBezierPath *))layerHandler {
+    
+    [self xk_setCornerRadiusWithRect:rect corners:corners radii:radii.width layerHandler:layerHandler];
+}
+
+- (void)xk_setCornerRadiusWithCorners:(UIRectCorner)corners radii:(CGFloat)radii layerHandler:(CAShapeLayer *(^)(CAShapeLayer *, UIBezierPath *))layerHandler {
+    
+    [self xk_setCornerRadiusWithRect:self.bounds corners:corners radii:radii layerHandler:layerHandler];
+}
+
 + (UIColor *)colorWithHexString:(NSString *)color {
     
     NSString *cString = [[color stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];

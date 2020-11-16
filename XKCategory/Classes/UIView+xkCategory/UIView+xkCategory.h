@@ -39,4 +39,8 @@
 /// @param layerHandler layerHandler
 - (void)xk_setCornerRadiusWithRect:(CGRect)rect corners:(UIRectCorner)corners radii:(CGFloat)radii layerHandler:(CAShapeLayer *(^)(CAShapeLayer *shareLayer, UIBezierPath * maskPath))layerHandler;
 
+- (void)xk_setCornerRadiusWithRect:(CGRect)rect corners:(UIRectCorner)corners radiiSize:(CGSize)radii layerHandler:(CAShapeLayer *(^)(CAShapeLayer *shareLayer, UIBezierPath * maskPath))layerHandler;
+
+- (void)xk_setCornerRadiusWithCorners:(UIRectCorner)corners radii:(CGFloat)radii layerHandler:(CAShapeLayer *(^)(CAShapeLayer *shareLayer, UIBezierPath * maskPath))layerHandler;
+
 @end
