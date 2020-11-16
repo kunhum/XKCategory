@@ -64,10 +64,13 @@
 
 - (void)xk_setFont:(UIFont *)font {
     
-    if (self.doNotAdjustFont || [NSStringFromClass(self.class) isEqualToString:@"UILabel"] == NO || [NSStringFromClass(self.superview.class) isEqualToString:@"UINavigationItemView"]) {
+    BOOL doNotScale  = self.doNotAdjustFont || [NSStringFromClass(self.class) isEqualToString:@"UILabel"] == NO || [NSStringFromClass(self.superview.class) isEqualToString:@"UINavigationItemView"] || [NSStringFromClass(self.superview.class) isEqualToString:@"UIKeyboardEmojiSectionHeader"] || [NSStringFromClass(self.superview.superview.class) isEqualToString:@"UIKeyboardEmojiCollectionViewCell"];
+    
+    if (doNotScale) {
         [self xk_setFont:font];
         return;
     }
+    
     CGFloat fontSize   = font.pointSize;
     
     NSString *fontName = font.fontName;
