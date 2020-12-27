@@ -49,8 +49,6 @@
 #pragma mark 初始化时执行
 - (void)initAction {
     self.insertLimit = [XKInsertLimiter new];
-    self.insertLimit.maxLength   = 0;
-    self.insertLimit.filterEmoji = YES;
     [self.insertLimit xk_starLimitingTextView:self];
     
     CGFloat fontSize   = self.font.pointSize;
