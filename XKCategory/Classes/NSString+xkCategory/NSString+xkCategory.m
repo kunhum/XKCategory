@@ -41,6 +41,21 @@ static NSCharacterSet *VariationSelectors = nil;
     }
     return priceText;
 }
++ (NSString *)xk_formatterFloat:(double)floatValue mode:(NSRoundingMode)mode {
+    
+    NSDecimalNumber *number         = [NSDecimalNumber numberWithDouble:floatValue];
+    NSDecimalNumberHandler *handler = [NSDecimalNumberHandler decimalNumberHandlerWithRoundingMode:mode scale:2 raiseOnExactness:NO raiseOnOverflow:NO raiseOnUnderflow:NO raiseOnDivideByZero:NO];
+    number                          = [number decimalNumberByRoundingAccordingToBehavior:handler];
+    NSString *priceText             = number.stringValue;
+    
+    if ([priceText hasSuffix:@".00"]) {
+        priceText = [priceText stringByReplacingOccurrencesOfString:@".00" withString:@""];
+    }
+    else if ([priceText hasSuffix:@"0"]) {
+        priceText = [priceText substringToIndex:priceText.length-1];
+    }
+    return priceText;
+}
 
 #pragma mark -- 字符串拼接
 - (NSString *)xk_stringByAppendString:(NSString *)appendString {

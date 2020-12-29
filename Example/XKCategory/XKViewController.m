@@ -8,6 +8,7 @@
 
 #import "XKViewController.h"
 #import <UIScrollView+xkCategory.h>
+#import <NSString+xkCategory.h>
 
 @interface XKViewController ()
 
@@ -20,6 +21,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    NSLog(@"%@", [NSString xk_formatterFloat:6.835 mode:NSRoundDown]);
 }
 
 - (void)didReceiveMemoryWarning

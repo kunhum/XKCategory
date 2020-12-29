@@ -21,6 +21,15 @@
  @return 格式化后的小数
  */
 + (NSString *)xk_formatterFloat:(CGFloat)floatValue;
+/**
+ 格式化.2f
+ eg：3.00 显示
+ 3.10显示3.1
+ 3.01显示3.01
+ 
+ @return 格式化后的小数
+ */
++ (NSString *)xk_formatterFloat:(double)floatValue mode:(NSRoundingMode)mode;
 
 ///将汉字转换为拼音
 - (NSString *)xk_pinyinOfName;
