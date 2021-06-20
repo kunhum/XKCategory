@@ -34,6 +34,8 @@
 #import "UIView+xkFrameCategory.h"
 #import "UIViewController+xkCategory.h"
 #import "XKCategoryDefines.h"
+#import "UIColor+ZXLazy.h"
+#import "UIImage+xkCategory.h"
 
 FOUNDATION_EXPORT double XKCategoryVersionNumber;
 FOUNDATION_EXPORT const unsigned char XKCategoryVersionString[];

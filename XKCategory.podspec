@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'XKCategory'
-  s.version          = '1.4.4'
+  s.version          = '1.4.5'
   s.summary          = '日常用到的分类'
 
 # This description is used to generate tags and improve search results.
@@ -47,10 +47,10 @@ Pod::Spec.new do |s|
 #      stringCategory.source_files = 'XKCategory/Classes/XKCategory/NSString+xkCategory/*.{h,m}'
 #      stringCategory.public_header_files = 'XKCategory/Classes/XKCategory/NSString+xkCategory/*.h'
 #  end
-#  s.subspec 'UIImage+xkCategory' do |imageCategory|
-#      imageCategory.source_files = 'XKCategory/Classes/XKCategory/UIImage+xkCategory/*.{h,m}'
-#      imageCategory.public_header_files = 'XKCategory/Classes/XKCategory/UIImage+xkCategory/*.h'
-#  end
+  s.subspec 'UIImage+xkCategory' do |imageCategory|
+      imageCategory.source_files = 'XKCategory/Classes/UIImage+xkCategory/*.{h,m}'
+      imageCategory.public_header_files = 'XKCategory/Classes/UIImage+xkCategory/*.h'
+  end
 #  s.subspec 'UILabel+xkCategory' do |labelCategory|
 #      labelCategory.source_files = 'XKCategory/Classes/XKCategory/UILabel+xkCategory/*.{h,m}'
 #      labelCategory.public_header_files = 'XKCategory/Classes/XKCategory/UILabel+xkCategory/*.h'
@@ -77,10 +77,10 @@ Pod::Spec.new do |s|
 #      navigationControllerCategory.source_files = 'XKCategory/Classes/XKCategory/UINavigationController+xkCategory/*.{h,m}'
 #      navigationControllerCategory.public_header_files = 'XKCategory/Classes/XKCategory/UINavigationController+xkCategory/*.h'
 #  end
-#  s.subspec 'UIColorHex' do |colorCategory|
-#      colorCategory.source_files = 'XKCategory/Classes/XKCategory/UIColorHex/*.{h,m}'
-#      colorCategory.public_header_files = 'XKCategory/Classes/XKCategory/UIColorHex/*.h'
-#  end
+  s.subspec 'UIColorHex' do |colorCategory|
+      colorCategory.source_files = 'XKCategory/Classes/UIColorHex/*.{h,m}'
+      colorCategory.public_header_files = 'XKCategory/Classes/UIColorHex/*.h'
+  end
 
   s.source_files = 'XKCategory/Classes/**/*'
   s.dependency 'SVProgressHUD'
